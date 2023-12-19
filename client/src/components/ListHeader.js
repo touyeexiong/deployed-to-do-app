@@ -1,9 +1,9 @@
 import React from 'react'
 
-const ListHeader = () => {
+const ListHeader = ({listName}) => {
   return (
-    <div>
-      
+    <div className='list-header'>
+      <h1>{listName}</h1>
     </div>
   )
 }
