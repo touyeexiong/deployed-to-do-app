@@ -4,7 +4,7 @@ import ProgressBar from "./ProgressBar";
 
 const ListItem = ({ task }) => {
   return (
-    <div className="list-item">
+    <li className="list-item">
 
       <div className="info-container">
         <TickIcon />
@@ -12,10 +12,11 @@ const ListItem = ({ task }) => {
         <ProgressBar />
       </div>
       <div className="button-container">
-      </div>
       <button className="edit">EDIT</button>
       <button className="delete">DELETE</button>
-    </div>
+      </div>
+
+    </li>
   );
 };
 
