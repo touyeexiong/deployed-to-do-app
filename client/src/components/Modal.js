@@ -1,13 +1,21 @@
 import React from 'react'
+import { useState } from 'react';
 
 const Modal = () => {
+  const mode = "create";
+  const editMode = mode === "edit" ? true : false
+  const [data, setData] = useState({
+    user_email: "",
+    title: "",
+    progress: "",
+    date: editMode ? "" : new Date()
+  });
 
   const handleChange = () => {
     console.log('changing');
     
   }
 
-  const mode = 'create'
   return (
     <div className='overlay'>
       <div className='modal'>
@@ -26,9 +34,11 @@ const Modal = () => {
               onChange={handleChange}
             />
             <br/>
+            <label for="range"> Drag to select your current progress</label>
             <input 
               required
               type='range'
+              id="range"
               min="0"            
               max="100"
               name="progress"
