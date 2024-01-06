@@ -124,3 +124,16 @@ body {
     stroke-miterlimit: 10;
     stroke-width: 32px;
 }
+
+/* Modal */
+.overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0, 0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
