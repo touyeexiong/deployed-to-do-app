@@ -11,8 +11,15 @@ const Modal = () => {
     date: editMode ? "" : new Date()
   });
 
-  const handleChange = () => {
-    console.log('changing');
+  const handleChange = (e) => {
+    console.log('changing', e);
+    const {name, value} = e.target;
+
+    setData(data => ({
+      ...data,
+      [name] : value
+    }))
+    console.log(data);
     
   }
 
