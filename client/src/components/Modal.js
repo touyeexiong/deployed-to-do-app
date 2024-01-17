@@ -10,9 +10,15 @@ const Modal = ({ mode, setShowModal, task}) => {
     date: editMode ? "" : new Date()
   });
 
-  const postData = () => {
+  const postData = async () => {
     try {
-      fetch()
+       const response = await fetch('http://localhost:8000/todos', {
+        method: "POST",
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      })
+      console.log(response);
+      
     } catch (error) {
       console.log(error);
       
