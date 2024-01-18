@@ -66,7 +66,7 @@ const Modal = ({ mode, setShowModal, task}) => {
               value={data.progress}
               onChange={handleChange} 
               />
-            <input className={mode} type='submit'/>
+            <input className={mode} type='submit' onClick={editMode ? '': postData} />
           </form>
 
       </div>
