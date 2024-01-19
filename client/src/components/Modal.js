@@ -4,13 +4,14 @@ import { useState } from 'react';
 const Modal = ({ mode, setShowModal, task}) => {
   const editMode = mode === "edit" ? true : false
   const [data, setData] = useState({
-    user_email: editMode ? task.user_email: null,
+    user_email: editMode ? task.user_email: '@test.com',
     title: editMode ? task.title : null,
     progress: editMode ? task.progress : 50,
     date: editMode ? "" : new Date()
   });
 
-  const postData = async () => {
+  const postData = async (e) => {
+    e.preventDefault();
     try {
        const response = await fetch('http://localhost:8000/todos', {
         method: "POST",

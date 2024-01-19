@@ -5,7 +5,9 @@ const app = express();
 const pool = require("./db");
 const cors = require("cors");
 
+
 app.use(cors());
+app.use(express.json());
 
 // get all todos
 
@@ -28,6 +30,8 @@ app.get(`/todos/:userEmail`, async (req, res) => {
 
 app.post("/todos", (req, res) => {
   const { user_email, title, progress, date } = req.body;
+  console.log(user_email, title, progress, date);
+
   const id = uuidv4();
   try {
     pool.query(
