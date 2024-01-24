@@ -18,7 +18,7 @@ const Modal = ({ mode, setShowModal, getData, task }) => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
-      if (response.status == 200) {
+      if (response.status === 200) {
         console.log('WORKED');
         setShowModal(false);
         getData();
